@@ -1,0 +1,157 @@
+body {
+  background-color: #D6EEFD;
+  font-family: "Comfortaa", sans-serif;
+}
+
+header {
+  text-align: center;
+  font-weight: 300;
+}
+
+#page-title, #places-title, #food-title, #pictures-title {
+  color: #0E3751;
+}
+
+.menu {
+   background-color: #80CCFD;
+   display: flex;
+   justify-content: center;
+   list-style-type: none;
+   padding: 10 px;
+}
+
+.menu li {
+   margin: 20px;
+}
+
+.menu li a:visited {
+   color: yellow;
+}
+
+.menu li a:hover {
+   color:#E145A2 ;
+   transition: color 0.5s ease;
+}
+
+#home {
+   margin: 20px;
+   padding: 10px;
+   border: 3px solid #33A599;
+}
+
+p.sec1 {
+   text-align: center;
+   color: #0E3751;
+}
+
+p.sec1::selection{
+   color: #33A599;
+   background: #F8CCF6;
+}
+
+.places, .food, .pictures {
+   display: flex;
+   justify-content: space-around;
+   margin: 20px;
+}
+
+.places-section {
+   width: 30%;
+   padding: 10px;
+}
+
+.places-list {
+   list-style-type: circle;
+   padding-left: 20px;
+   color: #0E3751;
+}
+
+.places-list li {
+   margin-bottom: 10px;
+}
+
+.places-section h3, .food-section h3 {
+   text-align: center;
+   color: #33A599;
+   margin-bottom: 10px;
+}
+
+.food-section {
+   width: 20%;
+   border: 3px solid #F8CCF6;
+   border-radius: 5px;
+   padding: 10px;
+   text-align: center;
+}
+
+pic-section{
+   flex: 1;
+   max-width: 30%;
+   padding: 10px;
+}
+
+.pic-section img{
+   width: 100%;
+   height: auto;
+   border: 3px solid #33A599;
+}
+
+.pic-section img:hover{
+   opacity: 0.5;
+}
+
+.pic-section figcaption {
+   text-align: center;
+   font-style: italic;
+   margin-top: 5px;
+   color:#0E3751;
+}
+
+.contact {
+   color: #0E3751;
+   text-align: center;
+}
+
+.contact p {
+    display: none;
+}
+
+.contact h2:hover + p {
+   display: block;
+   background-color: #F8CCF6;
+   padding: 20px;
+}
+
+.animation {
+   border: 10px solid #F8CCF6;
+   background-color: #33A599;
+   color: white;
+   padding: 10px;  
+   
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   width: 200px;
+   height: 30px;
+   
+   position: relative;
+   animation-name: moving;
+   animation-duration: 10s;
+   animation-iteration-count: infinite;
+}
+
+@keyframes moving {
+   0% {left: 100px;}
+   50%{left: 1200px;}
+   100%{left: 100px;}
+
+}
+
+footer {
+  text-align: center;
+  font-weight: 300;
+  color: #0E3751;
+  padding: 10px;
+}
+
+
