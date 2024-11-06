@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+	<title>Javascript</title>
+</head>
+
+<body style= "background-color: #FAE1F2; padding: 0; margin: 0; font-family: Roboto;">
+	<header style="text-align: center;">
+		<h1>Lab 4: Javascript Problems</h1>
+	
+		<nav style="background-color: #F88CD5; font-size: 1.3rem; text-align: center; padding: 2px; margin: 0;">
+			<ul style="font-weight:350; list-style-type: none;">
+				<li style= "display: inline; margin-right: 40px;"><a href=#p1 style="color:white;">Problem 1</a></li>
+				<li style= "display: inline; margin-right: 40px;"><a href=#p2 style="color:white;">Problem 2</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+	
+	<main>
+		<section id="p1" style="display: flex; align-items: center; justify-content: center; flex-direction:column;">
+			<h2>Problem 1</h2>
+			<h3>List of bookmarks of my favourite websites</h3>
+			<button onclick="displayBookmarks()">Show Bookmarks</button>
+			<ul id="list-bookmarks" style="list-style-type: none;"></ul>
+		</section>
+		
+		
+		<section id="p2" style="display: flex; align-items: center; justify-content: center; flex-direction:column;">
+			<h2>Problem 2</h2>
+			<h3>Palindrome Checker</h3>
+			
+			<label for="input-str">Enter a sentence: </label>
+			<input type="text" id="input-str" style= "width: 300px; ; height=40px; padding: 5px;" />
+			<button onclick="checkPalindromes()">Check</button>
+			<div id="message-str"></div>
+		</section>
+		
+	</main>
+	
+	<footer style="padding: 10px; position: relative;">
+		<p style="text-align: center">&copy; 2024 Carole Youssef. All rights reserved.</p>
+	</footer>
+	
+	<script>
+	//Problem 1
+		
+	function displayBookmarks() {
+		const bookmarks = [
+		{ name: "Wikipedia", url: "https://www.wikipedia.org"},
+		{ name: "W3Schools", url: "https://www.w3schools.com"},
+		{ name: "RealWebsite", url: "http://fake-websitee.com"},
+	];
+			
+		const bookmarksList = document.getElementById("list-bookmarks");
+	
+		bookmarksList.innerHTML = '';
+			
+		bookmarks.forEach(bookmark => {
+			const lockIcon = bookmark.url.startsWith("https://")
+				? '<img src="images/closed.png" alt="Secure" style="width: 18px; height: 25px;">'
+				: '<img src="images/open.png" alt="Not Secure" style="width: 22px; height: 22px;">';
+				
+			const bookmarkListItem = document.createElement('li');
+			bookmarkListItem.innerHTML = `${lockIcon} <a href="${bookmark.url}" target="_blank">${bookmark.name}</a>`;
+			bookmarksList.appendChild(bookmarkListItem);
+		});		
+	}
+
+	//Problem 2
+
+	//function to remove all spaces, punctuation, and turn uppercase letters into lowercase letters
+	function fixString(str) {
+		return str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+	}
+
+	//palindrome function
+	function isPalindrome(str){
+		const fixedStr = fixString(str);
+		const reversedStr = fixedStr.split('').reverse().join('');
+		return fixedStr === reversedStr;
+	}
+
+	//tester function 
+	function checkPalindromes(){
+		const inputStr = document.getElementById('input-str').value;
+		const results = document.getElementById("message-str");
+	
+		if (inputStr) {
+			const message = isPalindrome(inputStr);
+		
+			const resultMsg = document.createElement('p');
+			resultMsg.textContent = `"${inputStr}" ${message ? "-- This is a palindrome." : "-- This is not a palindrome."}`;
+			resultMsg.style.color = message ? 'green' : 'red';
+			results.appendChild(resultMsg);
+		}
+	}
+
+	</script>
+</body>
+</html>
