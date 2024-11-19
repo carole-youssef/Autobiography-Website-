@@ -1,0 +1,16 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white" />
+
+<!--yellow circle-->
+<circle cx="300" cy="150" r="100" fill="#FEF001" style="mix-blend-mode: multiply"></circle>
+<text x="285" y="120" font-size="45" font-weight="bold" font-family="Arial" fill="black">Y</text>
+
+<!--magenta circle-->
+<circle cx="250" cy="250" r="100" fill="#EA008A" style="mix-blend-mode: multiply"></circle>
+<text x="190" y="290" font-size="45" font-weight="bold" font-family="Arial" fill="black">M</text>
+
+<!--cyan circle-->
+<circle cx="350" cy="250" r="100" fill="#00ADEE" style="mix-blend-mode: multiply"></circle>
+<text x="380" y="290" font-size="45" font-weight="bold" font-family="Arial" fill="black">C</text>
+
+</svg>
