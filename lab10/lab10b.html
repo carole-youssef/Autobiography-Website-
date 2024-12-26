@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lab10b</title>
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e9f5ff; /* Light blue background */
+                color: #333;
+            }
+            .header-title {
+                text-align: center;
+                margin: 2rem 0;
+                font-size: 2.5rem;
+                color: #0056b3; /* Darker blue for the title */
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                margin-top: 1rem;
+                padding: 1rem;
+            }
+
+            .form-container {
+                background-color: #ffffff; /* White form background */
+                border: 2px solid #b3d9ff; /* Light blue border */
+                border-radius: 15px;
+                padding: 2rem;
+                width: 80%;
+                max-width: 500px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            }
+
+            .form-group {
+                margin: 1rem 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+                color: #0056b3; /* Matching blue for labels */
+            }
+
+            input[type="text"],
+            input[type="url"],
+            select {
+                padding: 0.8rem;
+                border: 1px solid #b3d9ff; /* Light blue border */
+                border-radius: 8px;
+                font-size: 1rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            input[type="text"]:focus,
+            input[type="url"]:focus,
+            select:focus {
+                outline: none;
+                border-color: #007bff; /* Slightly darker blue when focused */
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus effect */
+            }
+
+            input[type="submit"] {
+                padding: 0.8rem 1.5rem;
+                font-size: 1.2rem;
+                cursor: pointer;
+                background-color: #007bff; /* Blue button background */
+                color: white;
+                border: none;
+                border-radius: 8px;
+                margin-top: 1rem;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3; /* Darker blue on hover */
+                transform: translateY(-2px); /* Subtle lift effect */
+            }
+
+            input[type="submit"]:active {
+                background-color: #003f7f; /* Even darker blue on click */
+                transform: translateY(0); /* Reset lift effect */
+            }
+
+            .form-group input::placeholder {
+                color: #bbb; /* Lighter placeholder text */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="header-title">Lab10b: Ruby and Python</h1>
+        </header>
+
+        <div class="container">
+            <form class="form-container" id="cityForm" method="post">
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="province">Province/State:</label>
+					<input type="text" id="province" name="province"  placeholder="Enter your province/state (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" placeholder="Enter your country" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Image:</label>
+                    <input type="url" id="photo" name="photo" placeholder="Enter Image URL" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" name="action" value="Submit-Ruby" formaction="https://www2.scs.ryerson.ca/~cyoussef/cgi-bin/lab10r.cgi">
+                    <input type="submit" value="Submit-Python" formaction="https://www2.scs.ryerson.ca/~cyoussef/cgi-bin/lab10p.cgi">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
